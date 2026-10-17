@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 
-import { ENTRY_ID, parseArgs, upsertPatchEntry } from '../scripts/deploy.mjs'
+import { ENTRY_ID, ROOT, parseArgs, upsertPatchEntry } from '../scripts/deploy.mjs'
 
 describe('parseArgs', () => {
   it('默认值', () => {
@@ -11,7 +11,8 @@ describe('parseArgs', () => {
     assert.equal(args.profile, 'desktop')
     assert.equal(args.dryRun, false)
     assert.equal(args.noPatch, false)
-    assert.match(args.target, /dsh-folder-sessions$/)
+    // 默认 target = 本仓库目录；不要假设仓库目录名（CI checkout 目录名与本地可不同）
+    assert.equal(args.target, ROOT)
   })
 
   it('覆盖 target/profile 与开关', () => {
