@@ -1,0 +1,12 @@
+# dsh-plugin-folder-sessions 的 bundle patch。
+#
+# 作为 DSH bundle（npm 包 / GitHub / 本地 tgz）安装时，插件管理器会把下面这条 insert
+# 追加进 profile 树；`name` 用包名，由 pnpm 装进 profile 的 node_modules 后解析。
+# 插件管理器安装时会自动把本包加入 profile 的 `dsh.profile.bundles`，一般无需手改。
+- insert:
+    - id: folder-sessions
+      name: 'dsh-plugin-folder-sessions'
+      config:
+        # 可选：新会话目录的根目录。不写则默认 ~/dsh-sessions（尊重 DSH_HOME）。
+        # 也可以在「设置 → 通用 → 新会话目录」里随时更改（保存到 ~/.dsh/folder-sessions.json）。
+        # baseDir: '/Users/you/dsh-sessions'
