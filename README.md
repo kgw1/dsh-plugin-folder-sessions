@@ -1,5 +1,7 @@
 # dsh-plugin-folder-sessions
 
+[![ci](https://github.com/kgw1/dsh-plugin-folder-sessions/actions/workflows/ci.yml/badge.svg)](https://github.com/kgw1/dsh-plugin-folder-sessions/actions/workflows/ci.yml)
+
 A [DSH](https://github.com/deepseek-ai/deepseek-harness) Desktop plugin that makes
 **New Session** mean *"a brand-new folder for this session"* instead of *"reuse an
 existing workspace"* — while keeping the workspace **+** button exactly as DSH ships it.
@@ -41,7 +43,7 @@ DSH Desktop → **Plugins** page → install by one of:
 | Channel | What to enter |
 |---|---|
 | npm (after publishing) | `dsh-plugin-folder-sessions` or `dsh-plugin-folder-sessions@0.1.0` |
-| GitHub | `github:<owner>/<repo>#v0.1.0` (tag must contain prebuilt `client.js`) |
+| GitHub | `github:kgw1/dsh-plugin-folder-sessions#v0.1.0` (tag must contain prebuilt `client.js`) |
 | Local tarball | absolute path to `dsh-plugin-folder-sessions-0.1.0.tgz` |
 
 The plugin manager runs pnpm in the profile, selects the bundle, and applies its
@@ -52,7 +54,7 @@ your config and session folders untouched.
 ### Development / local-path install (repo checkout only)
 
 ```sh
-git clone <this repo> && cd dsh-plugin-folder-sessions
+git clone https://github.com/kgw1/dsh-plugin-folder-sessions.git && cd dsh-plugin-folder-sessions
 node scripts/build-client.mjs   # rebuild client.js after editing src/client
 node scripts/deploy.mjs         # backup + append an absolute-path entry to ~/.dsh/profiles/desktop/cordis.patch.yml
 # fully quit and reopen DSH, then:

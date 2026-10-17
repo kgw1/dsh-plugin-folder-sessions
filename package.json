@@ -2,6 +2,14 @@
   "name": "dsh-plugin-folder-sessions",
   "version": "0.1.0",
   "description": "DSH plugin: the New Session button creates a fresh session workspace folder under a configurable root, and renaming an auto-created workspace renames its folder too.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgw1/dsh-plugin-folder-sessions.git"
+  },
+  "homepage": "https://github.com/kgw1/dsh-plugin-folder-sessions#readme",
+  "bugs": {
+    "url": "https://github.com/kgw1/dsh-plugin-folder-sessions/issues"
+  },
   "type": "module",
   "main": "index.js",
   "exports": {
